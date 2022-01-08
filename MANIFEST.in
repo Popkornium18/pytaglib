@@ -1,2 +1,2 @@
-include src/*.pxd
-include src/*.pyx
+include src/taglib/*.pxd
+include src/taglib/*.pyx

@@ -10,7 +10,7 @@ import os
 
 from libcpp.utility cimport pair
 from pathlib import Path
-cimport ctypes
+cimport taglib.ctypes as ctypes
 
 version = '1.5.0'
 

@@ -55,8 +55,10 @@ def extension_kwargs():
         return dict(libraries=['tag'])
 
 
+taglib_pyx = here / src / 'taglib' / 'file.pyx'
+
+
 def version():
-    taglib_pyx = here / src / 'taglib.pyx'
     version_match = re.search(r"^version = ['\"]([^'\"]*)['\"]", taglib_pyx.read_text(), re.M)
     return version_match.group(1)
 
@@ -72,10 +74,10 @@ setup(
     author='Michael Helmling',
     author_email='michaelhelmling@posteo.de',
     url='http://github.com/supermihi/pytaglib',
-    ext_modules=cythonize([Extension('taglib', [str(src / 'taglib.pyx')], **extension_kwargs())], force=True),
+    ext_modules=cythonize([Extension('taglib.file', [str(taglib_pyx)], **extension_kwargs())], force=True),
+    packages=['taglib'],
     package_dir={'': 'src'},
-    py_modules=['pytaglib', 'pyprinttags'],
-    entry_points={'console_scripts': ['pyprinttags=pyprinttags:script']},
+    entry_points={'console_scripts': ['pyprinttags=taglib.pyprinttags:script']},
     extras_require={
         "tests": ["pytest"],
     },

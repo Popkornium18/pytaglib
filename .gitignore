@@ -11,4 +11,4 @@ dist
 *.pyd
 .eggs
 .vscode
-/src/taglib.cpp
+/src/taglib/file.cpp

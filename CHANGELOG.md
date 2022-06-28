@@ -1,3 +1,4 @@
+
 Changelog
 =========
 NEXT
@@ -121,7 +122,7 @@ pytaglib 0.3.4 (2013/01/16)
 
 pytaglib 0.3.3 (2013/01/16)
 ---------------------------
-- ensure sources are included in sdist packages 
+- ensure sources are included in sdist packages
 - fix call to pyprinttags
 - fix setup.py handling for non-utf8-locales
 - rename pyprinttags to pyprinttags3 for python3 installs
